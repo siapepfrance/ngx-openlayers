@@ -1,4 +1,4 @@
-import { Component, Host, Input, OnInit, forwardRef } from '@angular/core';
+import { Component, Host, Input, OnChanges, OnInit, forwardRef, SimpleChanges } from '@angular/core';
 import { source, TileLoadFunctionType, tilegrid } from 'openlayers';
 import { LayerTileComponent } from '../layers';
 import { SourceComponent } from './source.component';
@@ -10,7 +10,7 @@ import { SourceComponent } from './source.component';
     { provide: SourceComponent, useExisting: forwardRef(() => SourceTileWMSComponent) }
   ]
 })
-export class SourceTileWMSComponent extends SourceComponent implements OnInit {
+export class SourceTileWMSComponent extends SourceComponent implements OnChanges, OnInit {
   instance: source.TileWMS;
   @Input() cacheSize: number;
   @Input() crossOrigin: string;
@@ -28,6 +28,12 @@ export class SourceTileWMSComponent extends SourceComponent implements OnInit {
 
   constructor(@Host() layer: LayerTileComponent) {
     super(layer);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.instance && changes.hasOwnProperty('params')) {
+      this.instance.updateParams(this.params);
+    }
   }
 
   ngOnInit() {

@@ -1,15 +1,16 @@
 import {
   Component, OnInit, ElementRef, Input, Output, EventEmitter, AfterViewInit,
-  SimpleChanges, OnChanges
+  SimpleChanges, OnChanges, Inject, PLATFORM_ID
 } from '@angular/core';
 import {
   Map, MapBrowserEvent, MapEvent, render, ObjectEvent, control,
   interaction
 } from 'openlayers';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'aol-map',
-  template: `<div [style.width]="width" [style.height]="height"></div><ng-content></ng-content>`
+  template: `<div [style.width]="width" [style.height]="height"></div><ng-content *ngIf="isBrowser"></ng-content>`
 })
 
 export class MapComponent implements OnInit, AfterViewInit, OnChanges {
@@ -40,8 +41,14 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   // we pass empty arrays to not get default controls/interactions because we have our own directives
   controls: control.Control[] = [];
   interactions: interaction.Interaction[] = [];
+  isBrowser: boolean;
 
-  constructor(private host: ElementRef) {
+  constructor(@Inject(PLATFORM_ID) private platformId,
+              private host: ElementRef) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+    if (!this.isBrowser) {
+      return;
+    }
     this.onClick = new EventEmitter<MapBrowserEvent>();
     this.onDblClick = new EventEmitter<MapBrowserEvent>();
     this.onMoveEnd = new EventEmitter<MapEvent>();
@@ -55,6 +62,9 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnInit() {
+    if (!this.isBrowser) {
+      return;
+    }
     // console.log('creating ol.Map instance with:', this);
     this.instance = new Map(this);
     this.instance.setTarget(this.host.nativeElement.firstElementChild);
@@ -71,6 +81,9 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    if (!this.isBrowser) {
+      return;
+    }
     let properties: { [index: string]: any } = {};
     if (!this.instance) {
       return;
@@ -85,6 +98,9 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit() {
+    if (!this.isBrowser) {
+      return;
+    }
     this.instance.updateSize();
   }
 }
