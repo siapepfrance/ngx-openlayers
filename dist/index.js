@@ -1,8 +1,16 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var components_1 = require("./components");
@@ -16,14 +24,19 @@ var COMPONENTS = [
     components_1.LayerTileComponent,
     components_1.LayerVectorComponent,
     components_1.LayerVectorTileComponent,
+    components_1.SourceClusterComponent,
+    components_1.SourceRasterComponent,
     components_1.SourceOsmComponent,
     components_1.SourceBingmapsComponent,
     components_1.SourceVectorComponent,
     components_1.SourceXYZComponent,
     components_1.SourceVectorTileComponent,
+    components_1.SourceTileUTFGridComponent,
     components_1.SourceTileWMSComponent,
     components_1.SourceTileWMTSComponent,
+    components_1.SourceTileJSONComponent,
     components_1.SourceGeoJSONComponent,
+    components_1.SourceImageStaticComponent,
     components_1.SourceImageWMSComponent,
     components_1.FeatureComponent,
     components_1.GeometryLinestringComponent,
@@ -75,14 +88,13 @@ var AngularOpenlayersModule = (function () {
     }
     return AngularOpenlayersModule;
 }());
-AngularOpenlayersModule.decorators = [
-    { type: core_1.NgModule, args: [{
-                declarations: COMPONENTS,
-                imports: [common_1.CommonModule],
-                exports: COMPONENTS
-            },] },
-];
-/** @nocollapse */
-AngularOpenlayersModule.ctorParameters = function () { return []; };
+AngularOpenlayersModule = __decorate([
+    core_1.NgModule({
+        declarations: COMPONENTS,
+        imports: [common_1.CommonModule],
+        exports: COMPONENTS
+    }),
+    __metadata("design:paramtypes", [])
+], AngularOpenlayersModule);
 exports.AngularOpenlayersModule = AngularOpenlayersModule;
 //# sourceMappingURL=index.js.map

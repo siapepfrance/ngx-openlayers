@@ -1,9 +1,9 @@
-/// <reference types="openlayers" />
 import { AfterContentInit, OnChanges, SimpleChanges } from '@angular/core';
 import { source, Size, TileUrlFunctionType, TileLoadFunctionType, tilegrid } from 'openlayers';
 import { LayerTileComponent } from '../layers';
 import { SourceComponent } from './source.component';
 import { TileGridComponent } from '../tilegrid.component';
+import { SourceRasterComponent } from './raster.component';
 export declare class SourceXYZComponent extends SourceComponent implements AfterContentInit, OnChanges {
     instance: source.XYZ;
     cacheSize: number;
@@ -22,7 +22,7 @@ export declare class SourceXYZComponent extends SourceComponent implements After
     urls: string[];
     wrapX: boolean;
     tileGridXYZ: TileGridComponent;
-    constructor(layer: LayerTileComponent);
+    constructor(layer: LayerTileComponent, raster?: SourceRasterComponent);
     ngAfterContentInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
 }

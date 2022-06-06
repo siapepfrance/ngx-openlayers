@@ -1,4 +1,3 @@
-/// <reference types="openlayers" />
 import { OnInit } from '@angular/core';
 import { source, TileLoadFunctionType } from 'openlayers';
 import { LayerTileComponent } from '../layers';

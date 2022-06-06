@@ -1,4 +1,3 @@
-/// <reference types="openlayers" />
 import { AfterViewInit, QueryList } from '@angular/core';
 import { Attribution } from 'openlayers';
 import { SourceComponent } from './sources/source.component';

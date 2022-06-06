@@ -1,8 +1,8 @@
-/// <reference types="openlayers" />
 import { AfterContentInit } from '@angular/core';
 import { source, AttributionLike, TileLoadFunctionType } from 'openlayers';
 import { LayerTileComponent } from '../layers';
 import { SourceXYZComponent } from './xyz.component';
+import { SourceRasterComponent } from './raster.component';
 export declare class SourceOsmComponent extends SourceXYZComponent implements AfterContentInit {
     instance: source.OSM;
     attributions: AttributionLike;
@@ -14,6 +14,6 @@ export declare class SourceOsmComponent extends SourceXYZComponent implements Af
     tileLoadFunction: TileLoadFunctionType;
     url: string;
     wrapX: boolean;
-    constructor(layer: LayerTileComponent);
+    constructor(layer: LayerTileComponent, raster?: SourceRasterComponent);
     ngAfterContentInit(): void;
 }

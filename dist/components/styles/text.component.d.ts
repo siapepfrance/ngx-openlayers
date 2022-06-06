@@ -1,4 +1,3 @@
-/// <reference types="openlayers" />
 import { OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { style } from 'openlayers';
 import { StyleComponent } from './style.component';
