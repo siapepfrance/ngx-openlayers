@@ -1,4 +1,4 @@
-import { Component, Host, Input, OnInit, forwardRef } from '@angular/core';
+import { Component, Host, Input, OnChanges, OnInit, forwardRef, SimpleChanges } from '@angular/core';
 import { AttributionLike, ImageLoadFunctionType, ProjectionLike, source } from 'openlayers';
 import { LayerImageComponent } from '../layers';
 import { SourceComponent } from './source.component';
@@ -10,7 +10,7 @@ import { SourceComponent } from './source.component';
     { provide: SourceComponent, useExisting: forwardRef(() => SourceImageWMSComponent) }
   ]
 })
-export class SourceImageWMSComponent extends SourceComponent implements OnInit {
+export class SourceImageWMSComponent extends SourceComponent implements OnChanges, OnInit {
   instance: source.ImageWMS;
 
   @Input() attributions: AttributionLike;
@@ -27,6 +27,12 @@ export class SourceImageWMSComponent extends SourceComponent implements OnInit {
 
   constructor(@Host() layer: LayerImageComponent) {
     super(layer);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.instance && changes.hasOwnProperty('params')) {
+      this.instance.updateParams(this.params);
+    }
   }
 
   ngOnInit() {
