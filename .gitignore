@@ -3,7 +3,7 @@ node_modules/*
 npm-debug.log
 
 # compiled output
-/dist
+#/dist
 
 # JetBrains
 .idea
