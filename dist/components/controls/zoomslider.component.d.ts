@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnDestroy, OnInit } from '@angular/core';
 import { control } from 'openlayers';
 import { MapComponent } from '../map.component';

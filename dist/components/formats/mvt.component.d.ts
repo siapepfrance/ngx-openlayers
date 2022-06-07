@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { format, geom } from 'openlayers';
 import { FormatComponent } from './format.component';
 export declare class FormatMVTComponent extends FormatComponent {

@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnInit } from '@angular/core';
 import { source, ProjectionLike, format } from 'openlayers';
 import { LayerVectorComponent } from '../layers';

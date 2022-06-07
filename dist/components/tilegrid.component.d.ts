@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { tilegrid, Extent, Size, Coordinate } from 'openlayers';
 export declare class TileGridComponent implements OnInit, OnChanges {

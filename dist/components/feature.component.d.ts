@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { Feature } from 'openlayers';
 import { SourceVectorComponent } from './sources';

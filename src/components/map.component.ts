@@ -43,7 +43,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   interactions: interaction.Interaction[] = [];
   isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId,
+  constructor(@Inject(PLATFORM_ID) private platformId: string,
               private host: ElementRef) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (!this.isBrowser) {

@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnInit, ElementRef, EventEmitter, AfterViewInit, SimpleChanges, OnChanges } from '@angular/core';
 import { Map, MapBrowserEvent, MapEvent, render, ObjectEvent, control, interaction } from 'openlayers';
 export declare class MapComponent implements OnInit, AfterViewInit, OnChanges {
@@ -26,7 +27,7 @@ export declare class MapComponent implements OnInit, AfterViewInit, OnChanges {
     controls: control.Control[];
     interactions: interaction.Interaction[];
     isBrowser: boolean;
-    constructor(platformId: any, host: ElementRef);
+    constructor(platformId: string, host: ElementRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     ngAfterViewInit(): void;

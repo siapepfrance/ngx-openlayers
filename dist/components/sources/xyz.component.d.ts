@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { AfterContentInit, OnChanges, SimpleChanges } from '@angular/core';
 import { source, Size, TileUrlFunctionType, TileLoadFunctionType, tilegrid } from 'openlayers';
 import { LayerTileComponent } from '../layers';

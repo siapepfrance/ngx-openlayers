@@ -1,13 +1,5 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var openlayers_1 = require("openlayers");
 var map_component_1 = require("../map.component");
@@ -35,92 +27,37 @@ var DrawInteractionComponent = (function () {
     };
     return DrawInteractionComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], DrawInteractionComponent.prototype, "clickTolerance", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "features", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "source", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], DrawInteractionComponent.prototype, "snapTolerance", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "type", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], DrawInteractionComponent.prototype, "maxPoints", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], DrawInteractionComponent.prototype, "minPoints", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "finishCondition", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "style", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "geometryFunction", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], DrawInteractionComponent.prototype, "geometryName", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "condition", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "freehandCondition", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], DrawInteractionComponent.prototype, "freehand", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], DrawInteractionComponent.prototype, "wrapX", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "onChange", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "onChangeActive", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "onDrawEnd", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "onDrawStart", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], DrawInteractionComponent.prototype, "onPropertyChange", void 0);
-DrawInteractionComponent = __decorate([
-    core_1.Component({
-        selector: 'aol-interaction-draw',
-        template: ''
-    }),
-    __metadata("design:paramtypes", [map_component_1.MapComponent])
-], DrawInteractionComponent);
+DrawInteractionComponent.decorators = [
+    { type: core_1.Component, args: [{
+                selector: 'aol-interaction-draw',
+                template: ''
+            },] },
+];
+/** @nocollapse */
+DrawInteractionComponent.ctorParameters = function () { return [
+    { type: map_component_1.MapComponent, },
+]; };
+DrawInteractionComponent.propDecorators = {
+    'clickTolerance': [{ type: core_1.Input },],
+    'features': [{ type: core_1.Input },],
+    'source': [{ type: core_1.Input },],
+    'snapTolerance': [{ type: core_1.Input },],
+    'type': [{ type: core_1.Input },],
+    'maxPoints': [{ type: core_1.Input },],
+    'minPoints': [{ type: core_1.Input },],
+    'finishCondition': [{ type: core_1.Input },],
+    'style': [{ type: core_1.Input },],
+    'geometryFunction': [{ type: core_1.Input },],
+    'geometryName': [{ type: core_1.Input },],
+    'condition': [{ type: core_1.Input },],
+    'freehandCondition': [{ type: core_1.Input },],
+    'freehand': [{ type: core_1.Input },],
+    'wrapX': [{ type: core_1.Input },],
+    'onChange': [{ type: core_1.Output },],
+    'onChangeActive': [{ type: core_1.Output },],
+    'onDrawEnd': [{ type: core_1.Output },],
+    'onDrawStart': [{ type: core_1.Output },],
+    'onPropertyChange': [{ type: core_1.Output },],
+};
 exports.DrawInteractionComponent = DrawInteractionComponent;
 //# sourceMappingURL=draw.component.js.map

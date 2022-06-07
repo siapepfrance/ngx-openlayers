@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { AfterContentInit } from '@angular/core';
 import { source, AttributionLike, TileLoadFunctionType } from 'openlayers';
 import { LayerTileComponent } from '../layers';

@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { AfterContentInit } from '@angular/core';
 import { source, ProjectionLike, TileUrlFunctionType, format, tilegrid } from 'openlayers';
 import { LayerVectorTileComponent } from '../layers';

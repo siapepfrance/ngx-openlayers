@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnInit } from '@angular/core';
 import { style, StyleGeometryFunction, geom } from 'openlayers';
 import { FeatureComponent } from '../feature.component';

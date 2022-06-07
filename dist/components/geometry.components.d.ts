@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { OnInit, OnDestroy } from '@angular/core';
 import { geom } from 'openlayers';
 import { FeatureComponent } from './feature.component';

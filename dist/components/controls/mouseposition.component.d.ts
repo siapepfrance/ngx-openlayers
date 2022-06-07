@@ -1,3 +1,4 @@
+/// <reference types="openlayers" />
 import { ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { control, CoordinateFormatType, ProjectionLike } from 'openlayers';
 import { MapComponent } from '../map.component';
